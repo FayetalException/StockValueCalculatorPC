@@ -8,11 +8,12 @@ namespace StockValueCalculator
         public string Artist { get; set; }
         public int Tracks { get; set; }
         public decimal BasePrice { get; set; }
+        public decimal VATRate { get; } = 1.20m;
         public decimal PriceIncludingVAT
         {
             get
             {
-                return decimal.Round(BasePrice * 1.20m, 2);  // 20% VAT on CDs                
+                return decimal.Round(BasePrice * VATRate, 2);  // 20% VAT on CDs                
             }
         }
 
