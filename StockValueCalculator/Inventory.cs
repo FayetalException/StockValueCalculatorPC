@@ -10,13 +10,9 @@ namespace StockValueCalculator
     {
         private List<IProduct> products = new List<IProduct>();
 
-        public void AddBook(string name, string author, int pages, decimal basePrice)
+        public void AddProduct(IProduct product)
         {
-            products.Add(new Book(name, author, pages, basePrice));
-        }
-        public void AddCD(string name, string artist, int tracks, decimal basePrice)
-        {
-            products.Add(new CD(name, artist, tracks, basePrice));
+            products.Add(product);
         }
 
         public decimal TotalStockValue
